@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Inertia\Inertia;
 use Symfony\Component\HttpFoundation\Response;
 
 class ProductController extends Controller
@@ -27,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('CreateProduct');
     }
 
     /**

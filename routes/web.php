@@ -27,7 +27,12 @@ use Inertia\Inertia;
 // TODO: grouping sama di auth middleware
 Route::get('/', function () {
     return Inertia::render('Homepage');
-});
+})->name('index');
+
+// TODO: resource buat create show product
+Route::resource('product', ProductController::class)->only([
+    'create', 'edit'
+]);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

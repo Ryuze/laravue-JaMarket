@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// TODO: resource buat api product
 Route::resource('product', ProductController::class)->except([
     'create', 'edit'
 ]);
