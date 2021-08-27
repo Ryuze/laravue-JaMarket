@@ -1,13 +1,15 @@
 <template>
-    <div>
-        <dashboard-header />
+    <div class="static">
+        <div class="relative">
+            <dashboard-header />
+        </div>
     </div>
 </template>
 
 <script>
-import DashboardHeader from '@/Components/DashboardHeader.vue';
+import DashboardHeader from "@/Components/DashboardHeader.vue";
 export default {
-  components: { DashboardHeader },
+    components: { DashboardHeader },
     setup() {
         return {};
     },

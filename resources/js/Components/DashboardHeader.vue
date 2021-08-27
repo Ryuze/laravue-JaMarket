@@ -1,80 +1,77 @@
 <template>
-    <div class="relative bg-green-400">
+    <div class="shadow">
         <div class="max-w-full mx-auto px-4">
             <div class="flex flex-row justify-between ml-4 mr-4">
-                <div class="flex flex-row">
-                    <img
-                        src="https://vuejs.org/images/logo.svg"
-                        alt="logo"
-                        class="h-8 w-auto mt-4 mb-4"
-                    />
-                    <p
+                <div class="my-auto relative inline-block">
+                    <div class="flex flex-row">
+                        <img
+                            src="https://vuejs.org/images/logo.svg"
+                            alt="logo"
+                            class="h-8 w-auto mt-4 mb-4"
+                        />
+                        <p class="my-auto text-center ml-2 text-xl font-bold">
+                            Logo
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-row relative">
+                    <input
+                        type="text"
                         class="
                             my-auto
-                            text-center
-                            ml-2
-                            text-white text-xl
-                            font-bold
+                            rounded-md
+                            w-screen
+                            hidden
+                            md:block md:max-w-md
+                            lg:max-w-xl
+                            xl:max-w-4xl
+                            shadow-sm
+                            border border-gray-400 border-opacity-10
+                            placeholder-gray-300
+                            bg-gray-50
+                            text-gray-500
+                            focus:ring-0
+                            focus:shadow-md
+                            focus:border-gray-400
+                            focus:border-opacity-60
+                            focus:bg-white
+                            hover:shadow-md
                         "
-                    >
-                        Logo
-                    </p>
+                        placeholder="Search here"
+                    />
                 </div>
-                <div class="my-auto flex flex-row relative">
-                    <div>
+                <div class="my-auto relative inline-block">
+                    <div class="flex flex-row">
                         <button
+                            @click="
+                                visible = !visible;
+                                rotate;
+                            "
                             type="button"
                             class="
-                                inline-flex
-                                justify-center
-                                w-full
-                                rounded-md
-                                border border-gray-300
+                                border
+                                rounded
                                 shadow-sm
+                                bg-green-500
+                                text-white
+                                font-bold
                                 px-4
                                 py-2
-                                bg-white
-                                text-sm
-                                font-medium
-                                text-gray-700
-                                hover:bg-gray-50
-                                focus:outline-none
-                                focus:ring-2
-                                focus:ring-offset-2
-                                focus:ring-offset-gray-100
-                                focus:ring-indigo-500
+                                hover:bg-green-600
                             "
-                            id="menu-button"
-                            aria-expanded="true"
-                            aria-haspopup="true"
+                            id="profile"
                         >
-                            Options
-                            <svg
-                                class="-mr-1 ml-2 h-5 w-5"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                    clip-rule="evenodd"
-                                />
-                            </svg>
+                            <div class="flex flex-row">
+                                Jermain Johns
+                                <div class="pt-mini">
+                                    <i class="bi bi-caret-down ml-2"></i>
+                                </div>
+                            </div>
                         </button>
-
-                        <!-- TODO: bikin biar ada animasi pas dropdown -->
-                        <transition 
-                            enter-active-class="transition ease-out duration-100"
-                            enter-class="transform opacity-0 scale-95"
-                            enter-to-class="transform opacity-100 scale-100"
-                            leave-active-class="transition ease-in duration-75"
-                            leave-class="transform opacity-100 scale-100"
-                            leave-to-class="transform opacity-0 scale-95"
-                        >
-
+                    </div>
+                    <transition name="fade">
                         <div
+                            v-show="visible"
                             class="
                                 origin-top-right
                                 absolute
@@ -87,79 +84,58 @@
                                 ring-1 ring-black ring-opacity-5
                                 focus:outline-none
                             "
-                            role="menu"
-                            aria-orientation="vertical"
-                            aria-labelledby="menu-button"
-                            tabindex="-1"
                         >
-                            <div class="py-1" role="none">
-                                <!-- Active: "bg-gray-100 text-gray-900", Not Active: "text-gray-700" -->
-                                <a
-                                    href="#"
-                                    class="
-                                        text-gray-700
-                                        block
-                                        px-4
-                                        py-2
-                                        text-sm
-                                    "
-                                    role="menuitem"
-                                    tabindex="-1"
-                                    id="menu-item-0"
-                                    >Account settings</a
-                                >
-                                <a
-                                    href="#"
-                                    class="
-                                        text-gray-700
-                                        block
-                                        px-4
-                                        py-2
-                                        text-sm
-                                    "
-                                    role="menuitem"
-                                    tabindex="-1"
-                                    id="menu-item-1"
-                                    >Support</a
-                                >
-                                <a
-                                    href="#"
-                                    class="
-                                        text-gray-700
-                                        block
-                                        px-4
-                                        py-2
-                                        text-sm
-                                    "
-                                    role="menuitem"
-                                    tabindex="-1"
-                                    id="menu-item-2"
-                                    >License</a
-                                >
-                                <form method="POST" action="#" role="none">
-                                    <button
-                                        type="submit"
+                            <div class="py-1">
+                                <div class="border-b-2 border-gray-200 mb-2">
+                                    <img
+                                        src="https://randomuser.me/api/portraits/men/76.jpg"
+                                        alt="photo-profile"
                                         class="
-                                            text-gray-700
-                                            block
-                                            w-full
-                                            text-left
-                                            px-4
-                                            py-2
-                                            text-sm
+                                            rounded-full
+                                            h-12
+                                            w-12
+                                            items-center
+                                            mx-auto
+                                            m-2
                                         "
-                                        role="menuitem"
-                                        tabindex="-1"
-                                        id="menu-item-3"
+                                    />
+                                    <p
+                                        class="
+                                            text-center text-gray-700
+                                            font-thin
+                                            mb-2
+                                        "
                                     >
-                                        Sign out
-                                    </button>
-                                </form>
+                                        Jermain Johns
+                                    </p>
+                                </div>
+                                <a
+                                    href="#"
+                                    class="
+                                        text-gray-700
+                                        block
+                                        px-4
+                                        py-2
+                                        text-sm
+                                        hover:bg-gray-100
+                                    "
+                                    >asd</a
+                                >
+                                <a
+                                    href="#"
+                                    class="
+                                        text-gray-700
+                                        block
+                                        px-4
+                                        py-2
+                                        text-sm
+                                        hover:bg-gray-100
+                                    "
+                                    >qwe</a
+                                >
                             </div>
                         </div>
-
-                        </transition>
-                    </div>
+                    </transition>
                 </div>
             </div>
         </div>
@@ -171,7 +147,27 @@ export default {
     setup() {
         return {};
     },
+    data() {
+        return {
+            visible: false,
+            rotate: true,
+        };
+    },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease-in;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.pt-mini {
+    padding-top: 0.06rem;
+}
+</style>
