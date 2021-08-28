@@ -29,13 +29,14 @@ Route::get('/', function () {
     return Inertia::render('Homepage');
 })->name('index');
 
-// TODO: resource buat create show product
-Route::resource('product', ProductController::class)->only([
-    'create', 'edit'
-]);
+Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
+    Route::get('/', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/product', function () {
+        return Inertia::render('DashboardProduct');
+    })->name('dashboard.product');
+});
 
 require __DIR__.'/auth.php';

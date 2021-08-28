@@ -44,8 +44,7 @@
                     <div class="flex flex-row">
                         <button
                             @click="
-                                visible = !visible;
-                                rotate;
+                                visible = !visible
                             "
                             type="button"
                             class="
@@ -150,7 +149,6 @@ export default {
     data() {
         return {
             visible: false,
-            rotate: true,
         };
     },
 };
