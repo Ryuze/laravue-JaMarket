@@ -1,5 +1,5 @@
 <template>
-    <div class="shadow">
+    <div id="header" class="shadow">
         <div class="max-w-full mx-auto px-4">
             <div class="flex flex-row justify-between ml-4 mr-4">
                 <div class="my-auto relative inline-block">
@@ -42,23 +42,10 @@
                 </div>
                 <div class="my-auto relative inline-block">
                     <div class="flex flex-row">
-                        <button
-                            @click="
-                                visible = !visible
-                            "
-                            type="button"
-                            class="
-                                border
-                                rounded
-                                shadow-sm
-                                bg-green-500
-                                text-white
-                                font-bold
-                                px-4
-                                py-2
-                                hover:bg-green-600
-                            "
-                            id="profile"
+                        <button-tailwind
+                            @click="visible = !visible"
+                            :type="'button'"
+                            :class="'bg-green-500 hover:bg-green-600'"
                         >
                             <div class="flex flex-row">
                                 Jermain Johns
@@ -66,7 +53,7 @@
                                     <i class="bi bi-caret-down ml-2"></i>
                                 </div>
                             </div>
-                        </button>
+                        </button-tailwind>
                     </div>
                     <transition name="fade">
                         <div
@@ -142,7 +129,9 @@
 </template>
 
 <script>
+import ButtonTailwind from "./ButtonTailwind.vue";
 export default {
+    components: { ButtonTailwind },
     setup() {
         return {};
     },

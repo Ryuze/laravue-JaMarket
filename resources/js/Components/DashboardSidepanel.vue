@@ -1,5 +1,6 @@
 <template>
     <div
+        id="sidepanel"
         class="
             flex flex-col
             bg-black bg-opacity-85
@@ -7,6 +8,7 @@
             w-screen
             max-w-16
             h-screen
+            mb-20
         "
     >
         <div class="bg-black bg-opacity-50 border border-black">
@@ -17,7 +19,7 @@
             />
             <p class="text-center font-bold mb-2">Jermain Johns</p>
         </div>
-        <div class="mb-4">
+        <div class="mb-4 mt-2">
             <p class="text-gray-500 font-bold text-xs mb-1 ml-4 mt-2 mr-4">
                 PRODUCTIONS
             </p>
@@ -28,6 +30,9 @@
                         font-bold
                         border-0
                         rounded-md
+                        transition
+                        ease-in-out
+                        duration-150
                         hover:bg-gray-500 hover:text-gray-100
                     "
                 >
@@ -43,6 +48,9 @@
                         font-bold
                         border-0
                         rounded-md
+                        transition
+                        ease-in-out
+                        duration-150
                         hover:bg-gray-500 hover:text-gray-100
                     "
                 >
@@ -65,6 +73,9 @@
                         font-bold
                         border-0
                         rounded-md
+                        transition
+                        ease-in-out
+                        duration-150
                         hover:bg-gray-500 hover:text-gray-100
                     "
                 >

@@ -3,7 +3,7 @@
     <div class="flex h-screen">
         <p class="text-center m-auto font-extrabold">
             Homepage disini
-            <Link
+            <!-- <Link
                 :href="route('product.create')"
                 class="
                     bg-green-500
@@ -16,7 +16,7 @@
                 "
             >
                 Tambah produk
-            </Link>
+            </Link> -->
         </p>
         <div>
             <p class="m-auto">

@@ -1,9 +1,16 @@
 <template>
-    <div id="navigation" class="static">
-        <div class="fixed top-0 left-0 right-0">
-            <dashboard-header />
-            <div class="fixed left-0 hidden md:block">
-                <dashboard-sidepanel />
+    <div class="relative max-h-screen">
+        <div class="flex flex-col">
+            <div class="fixed w-screen">
+                <dashboard-header />
+            </div>
+            <div class="absolute mt-16">
+                <div class="fixed overflow-auto hidden md:block">
+                    <dashboard-sidepanel />
+                </div>
+                <div class="md:ml-68 md:mt-2 ml-2 mt-2 overflow-auto">
+                    <slot />
+                </div>
             </div>
         </div>
     </div>

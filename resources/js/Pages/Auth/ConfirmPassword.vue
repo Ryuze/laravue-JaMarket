@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import BreezeButton from '@/Components/Button.vue'
+import BreezeButton from '@/Components/Button2.vue'
 import BreezeGuestLayout from '@/Layouts/Guest.vue'
 import BreezeInput from '@/Components/Input.vue'
 import BreezeLabel from '@/Components/Label.vue'
